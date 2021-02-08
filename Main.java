@@ -113,6 +113,7 @@ public class Main{
 		// Решение лаб
 		System.out.print("\n\nLabs\n\n");
 
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		Lab_1 my_Lab_1 = new Lab_1();
 		System.out.println("<<< Lab 1 >>>\n");
 
@@ -127,6 +128,7 @@ public class Main{
 		System.out.println("Ex 9\t" + my_Lab_1.frames(10, 25));
 		System.out.println("Ex 10\t" + my_Lab_1.mod(218, 5));
 
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		Lab_2 my_Lab_2 = new Lab_2();
 		System.out.println("\n<<< Lab 2 >>>\n");
 		System.out.println("Ex 1\t" + my_Lab_2.oppositeHouse(5, 46));
@@ -142,6 +144,7 @@ public class Main{
 		System.out.println("Ex 9\t" + my_Lab_2.bomb("Bomd is here, bomb!"));
 		System.out.println("Ex 10\t" + my_Lab_2.sameAscii("AA", "B@"));
 
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		Lab_3 my_Lab_3 = new Lab_3();
 		System.out.println("\n<<< Lab 3 >>>\n");
 		Object[][] cities = {{"Nice", 942208},
@@ -160,6 +163,10 @@ public class Main{
 
 		System.out.println("Ex 3: \t" + my_Lab_3.rps("paper", "rock"));
 
+		int[] nums_arr = {12, 90, 75};
+		System.out.println("Ex 4: \t" + my_Lab_3.warOfNumbers(nums_arr));
+		System.out.println("Ex 5: \t" + my_Lab_3.reverseCase("sPoNtAnEoUs"));
+		System.out.println("Ex 6: \t" + my_Lab_3.inatorInator("Doom"));
 	}
 
 	private static int test(int a, int b){

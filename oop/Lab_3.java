@@ -15,12 +15,14 @@ public class Lab_3{
 		}
 	}
 
+	// Ex 2
 	public double[] otherSides(int num){
 		double[] a = {round(num * 2d*100)/100d, round(num * sqrt(3)*100)/100d };
 
 		return a;
 	}
 
+	// Ex 3
 	public String rps(String p_1, String p_2){
 		String[] arr = {"rock", "paper", "scissors"};
 		String res = "";
@@ -44,4 +46,36 @@ public class Lab_3{
 		return res;
 	}
 
+	// Ex 4
+	public int warOfNumbers(int[] arr){
+		int[] sum_nums = {0, 0};
+		for (int k = 0; k < arr.length; k++){
+			sum_nums[arr[k] % 2] += arr[k];
+		}
+		return abs(sum_nums[0] - sum_nums[1]);
+	}
+
+	// Ex 5
+	public String reverseCase(String line){
+		char[] ch_line = line.toCharArray();
+		for (int k = line.length() - 1; k >= 0; k--){
+			if ((int)ch_line[k] <= 90)
+				ch_line[k] = (char)((int)ch_line[k] + 32);
+			else
+				ch_line[k] = (char)((int)ch_line[k] - 32);
+		}
+
+		return String.valueOf(ch_line);
+	}
+
+	public String inatorInator(String line){
+		char[] ch_line = {'a', 'e', 'y', 'u', 'i', 'o'};
+		char a = line.charAt(line.length() - 1);
+
+		if (Arrays.asList(ch_line).contains(a))
+			return line + "-inator " + line.length() + "000";
+		else 
+			return line + "inator " + line.length() + "000";
+		
+	}
 }
