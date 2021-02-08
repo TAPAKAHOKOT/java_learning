@@ -150,10 +150,16 @@ public class Main{
 							{"Vatican City", 572}};			
 		System.out.println("Ex 1: \n");
 		my_Lab_3.millionsRounding(cities);
-		
+
 		for (int k = 0; k < cities.length; k++){
 			System.out.println(cities[k][0] + " - " + cities[k][1]);
 		}
+
+		double[] triangle_sides = my_Lab_3.otherSides(2);
+		System.out.println("\nEx 2: \t" + triangle_sides[0] + " " + triangle_sides[1]);
+
+		System.out.println("Ex 3: \t" + my_Lab_3.rps("paper", "rock"));
+
 	}
 
 	private static int test(int a, int b){
