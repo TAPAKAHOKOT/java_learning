@@ -147,9 +147,13 @@ public class Main{
 		Object[][] cities = {{"Nice", 942208},
 							{"Abu Dhabi", 1482816},
 							{"Naples", 2186853},
-							{"Vatican City", 572}};
-
-		System.out.println("Ex 1\t" + my_Lab_3.millionsRounding(cities));
+							{"Vatican City", 572}};			
+		System.out.println("Ex 1: \n");
+		my_Lab_3.millionsRounding(cities);
+		
+		for (int k = 0; k < cities.length; k++){
+			System.out.println(cities[k][0] + " - " + cities[k][1]);
+		}
 	}
 
 	private static int test(int a, int b){
