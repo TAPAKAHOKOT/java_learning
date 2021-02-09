@@ -167,6 +167,7 @@ public class Main{
 		System.out.println("Ex 4: \t" + my_Lab_3.warOfNumbers(nums_arr));
 		System.out.println("Ex 5: \t" + my_Lab_3.reverseCase("sPoNtAnEoUs"));
 		System.out.println("Ex 6: \t" + my_Lab_3.inatorInator("Doom"));
+		System.out.println("Ex 7: \t" + my_Lab_3.doesBrickFit(1, 2, 2, 1, 1));
 	}
 
 	private static int test(int a, int b){

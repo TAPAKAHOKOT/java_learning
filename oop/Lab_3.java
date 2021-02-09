@@ -67,7 +67,7 @@ public class Lab_3{
 
 		return String.valueOf(ch_line);
 	}
-
+	// Ex 6
 	public String inatorInator(String line){
 		char[] ch_line = {'a', 'e', 'y', 'u', 'i', 'o'};
 		char a = line.charAt(line.length() - 1);
@@ -76,6 +76,14 @@ public class Lab_3{
 			return line + "-inator " + line.length() + "000";
 		else 
 			return line + "inator " + line.length() + "000";
-		
+	}
+
+	// Ex 7
+	public boolean doesBrickFit(int a, int b, int c, int w, int h){
+		int min_ab = (a + b - abs(a-b))/2;
+		int max_ab = (a + b + abs(a-b))/2;
+		int min_c = (c + max_ab - abs(max_ab-c))/2;
+
+		return (min_ab*min_c) <= (w*h);
 	}
 }
