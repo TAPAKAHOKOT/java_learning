@@ -179,10 +179,5 @@ public class Main{
 	private static int test(int a, int b){
 		return a + b;
 	}
-	[user]
-	email = igrok332233@mail.ru
-	name = TAPAKAHOKOT
-	password = TAPAKAHOKOT332233
-[credential]
-	helper = wincred
+	
 }
