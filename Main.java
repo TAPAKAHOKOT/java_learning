@@ -169,6 +169,8 @@ public class Main{
 		System.out.println("Ex 6: \t" + my_Lab_3.inatorInator("Doom"));
 		System.out.println("Ex 7: \t" + my_Lab_3.doesBrickFit(1, 2, 2, 1, 1));
 		System.out.println("Ex 8: \t" + my_Lab_3.totalDistance(36.1, 8.6, 3, true));
+
+		
 	}
 
 	private static int test(int a, int b){
