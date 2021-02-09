@@ -3,6 +3,7 @@ package oop;
 import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.abs;
+import static java.lang.Math.pow;
 import java.util.Arrays;
 
 public class Lab_3{
@@ -85,5 +86,14 @@ public class Lab_3{
 		int min_c = (c + max_ab - abs(max_ab-c))/2;
 
 		return (min_ab*min_c) <= (w*h);
+	}
+
+	// Ex 8
+	public double totalDistance(double fuel, double fuel_rate, int passangers, boolean condit){
+		double res_rate = fuel_rate + 0.05 * fuel_rate * passangers;
+		if (condit)
+			res_rate *= 1.1;
+
+		return fuel / res_rate * 100;
 	}
 }
