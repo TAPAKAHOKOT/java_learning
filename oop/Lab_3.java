@@ -94,6 +94,27 @@ public class Lab_3{
 		if (condit)
 			res_rate *= 1.1;
 
-		return fuel / res_rate * 100;
+		return round(fuel / res_rate * 10000) / 100d;
+	}
+
+	// Ex 9
+	public double mean(int[] arr){
+		double sum_nums = 0d;
+		for (int k = 0; k < arr.length; k++){
+			sum_nums += arr[k];
+		}
+		return round(sum_nums / arr.length * 100) / 100d;
+	}
+	// Ex 10
+	public boolean parityAnalysis(int num){
+		int o_num = num;
+		int e_sum = 0;
+
+		while (o_num > 0){
+			e_sum += o_num % 10;
+			o_num /= 10;
+		}
+
+		return e_sum % 2 == num % 2;
 	}
 }

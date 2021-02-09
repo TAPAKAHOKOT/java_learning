@@ -170,7 +170,10 @@ public class Main{
 		System.out.println("Ex 7: \t" + my_Lab_3.doesBrickFit(1, 2, 2, 1, 1));
 		System.out.println("Ex 8: \t" + my_Lab_3.totalDistance(36.1, 8.6, 3, true));
 
-		
+		int[] nums_arr_2 = {1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3};
+		System.out.println("Ex 9: \t" + my_Lab_3.mean(nums_arr_2));
+		System.out.println("Ex 10: \t" + my_Lab_3.parityAnalysis(243));
+
 	}
 
 	private static int test(int a, int b){
