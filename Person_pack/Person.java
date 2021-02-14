@@ -2,7 +2,11 @@ package Person_pack;
 
 public class Person{
 	// Переменные - поля, функции - методы
-	int height = 160;
+	public int height = 160;
+
+	public Person(){
+		
+	}
 	public Person (int height) {
 		this.height = height;
 	}
@@ -11,3 +15,4 @@ public class Person{
 		return "Hello, wy height is " + height;
 	}
 }
+

@@ -1,4 +1,5 @@
 import Person_pack.Person;
+import Person_pack.Student;
 
 import oop.Lab_1;
 import oop.Lab_2;
@@ -106,8 +107,12 @@ public class Main{
 		// Классы
 		System.out.print("\n\nClasses\n\n");
 
-		Person ivan = new Person(169);
+		Person ivan = new Person();
 		System.out.println(ivan.say());
+
+		Student john = new Student(4, 173);
+		System.out.println("\n" + john.tell());
+		System.out.println(john.say());
 
 
 		// Решение лаб
