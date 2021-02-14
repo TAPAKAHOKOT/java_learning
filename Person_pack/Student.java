@@ -6,6 +6,8 @@ import Person_pack.Person;
 public class Student extends Person{
 	int course = 1;
 
+	public Student(){}
+
 	public Student (int c) {
 		course = c;
 	}

@@ -1,6 +1,12 @@
 import Person_pack.Person;
 import Person_pack.Student;
 
+import Comp_pack.Computer;
+
+import Inter_pack.Array;
+import Inter_pack.MyArray;
+import Inter_pack.TestArray;
+
 import oop.Lab_1;
 import oop.Lab_2;
 import oop.Lab_3;
@@ -110,9 +116,64 @@ public class Main{
 		Person ivan = new Person();
 		System.out.println(ivan.say());
 
+		// Наследование 
 		Student john = new Student(4, 173);
 		System.out.println("\n" + john.tell());
 		System.out.println(john.say());
+
+		// Вложенные классы
+		Computer pc = new Computer();
+		pc.i7.start();
+		System.out.println("\n" + pc.i7.status());
+		System.out.println(pc.transfer.status());
+
+		// Анонимные классы 
+		new Computer(){
+			void fastTunning(){
+				this.i7.start();
+				this.transfer.start();
+			}
+		};
+
+		// Абстрактные классы
+		// public abstract class...
+		// abstract pupbil void ...
+		// Абстрактный метод может быть только в абстрактном классе
+		// Нельзя создать абстрактный класс
+
+		// Перегрузка методов
+		System.out.println("\n" + summ(1, 2)); 
+		System.out.println(summ(1, 2, 3)); 
+		System.out.println(summ(1, 2.5f)); 
+
+		// static && final
+		// static позволяет взывать метод или поле класса, без содания экземпляра класса
+		// int x = math.summ(1, 2);
+
+		// final a = 10;
+		// теперь а - константа, ее нельзя менять
+
+		// Если написать public final class...
+		// то наследника у этого класса быть не может
+
+		// Если public final void 
+		// То мы не сможем переопределить этот меод
+
+		// интерфейсы
+		Array inter_a = new MyArray();
+		System.out.println("\n" + inter_a.Add(3));
+		System.out.println(inter_a.Add(1));
+		System.out.println(inter_a.Add(4));
+		System.out.println(inter_a.Get(2));
+
+
+		Array inter_b = new TestArray();
+		System.out.println("\n" + inter_b.Add(1));
+		System.out.println(inter_b.Add(1));
+		System.out.println(inter_b.Add(2));
+		System.out.println(inter_b.Add(3));
+		System.out.println(inter_b.Get(-1));
+		System.out.println(inter_b.Get(-10));
 
 
 		// Решение лаб
@@ -136,6 +197,7 @@ public class Main{
 		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		Lab_2 my_Lab_2 = new Lab_2();
 		System.out.println("\n<<< Lab 2 >>>\n");
+
 		System.out.println("Ex 1\t" + my_Lab_2.oppositeHouse(5, 46));
 		System.out.println("Ex 2\t" + my_Lab_2.nameshuffle("Donald Trump"));
 		System.out.println("Ex 3\t" + my_Lab_2.discount(89, 20));
@@ -152,6 +214,7 @@ public class Main{
 		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		Lab_3 my_Lab_3 = new Lab_3();
 		System.out.println("\n<<< Lab 3 >>>\n");
+
 		Object[][] cities = {{"Nice", 942208},
 							{"Abu Dhabi", 1482816},
 							{"Naples", 2186853},
@@ -181,6 +244,16 @@ public class Main{
 	}
 
 	private static int test(int a, int b){
+		return a + b;
+	}
+
+	static int summ(int a, int b){
+		return a + b;
+	}
+	static int summ(int a, int b, int c){
+		return a + b + c;
+	}
+	static float summ(int a, float b){
 		return a + b;
 	}
 	

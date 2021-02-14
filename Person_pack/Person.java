@@ -4,9 +4,8 @@ public class Person{
 	// Переменные - поля, функции - методы
 	public int height = 160;
 
-	public Person(){
-		
-	}
+	public Person(){}
+
 	public Person (int height) {
 		this.height = height;
 	}
