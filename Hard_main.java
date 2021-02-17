@@ -118,7 +118,6 @@ public class Hard_main{
 			}
 		});
 
-		testing_th_1.start();
 		testing_th_2.start();
 		testing_th_3.start();
 	}
