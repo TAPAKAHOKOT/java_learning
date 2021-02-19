@@ -25,7 +25,6 @@ public class Hard_main{
 		// dyn_arr.clear();
 		// dyn_arr = []
 
-		// dyn_arr.size();
 		// get array size
 
 		dyn_arr.remove(1);
