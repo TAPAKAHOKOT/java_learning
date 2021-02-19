@@ -10,6 +10,7 @@ import Inter_pack.TestArray;
 import oop.Lab_1;
 import oop.Lab_2;
 import oop.Lab_3;
+import oop.Lab_4;
 
 import java.lang.String; 
 import java.util.Scanner;
@@ -227,7 +228,7 @@ public class Main{
 		}
 
 		double[] triangle_sides = my_Lab_3.otherSides(2);
-		System.out.println("\nEx 2: \t" + triangle_sides[0] + " " + triangle_sides[1]);
+		System.out.println("\nbEx 2: \t" + triangle_sides[0] + " " + triangle_sides[1]);
 
 		System.out.println("Ex 3: \t" + my_Lab_3.rps("paper", "rock"));
 
@@ -241,6 +242,24 @@ public class Main{
 		int[] nums_arr_2 = {1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3};
 		System.out.println("Ex 9: \t" + my_Lab_3.mean(nums_arr_2));
 		System.out.println("Ex 10: \t" + my_Lab_3.parityAnalysis(243));
+
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 4 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		Lab_4 my_Lab_4 = new Lab_4();
+		System.out.println("\n<<< Lab 4 >>>\n");
+
+		int[] nums_arr_3 = {3, 2, 1, 4, 5, 6, 7};
+		System.out.println("Ex 1: \t" + my_Lab_4.sevenBoom(nums_arr_3));
+		int[] nums_arr_4 = {5, 6, 7, 8, 9, 9};
+		System.out.println("Ex 2: \t" + my_Lab_4.cons(nums_arr_4));
+		System.out.println("Ex 3: \t" + my_Lab_4.unmix("hTsii  s aimex dpus rtni.g"));
+		System.out.println("Ex 4: \t" + my_Lab_4.noYelling("Oh my goodness!!! WOOOW!?!?!"));
+		System.out.println("Ex 5: \t" + my_Lab_4.xPronounce("The x box xylophone was excellent!"));
+		int[] nums_arr_5 = {9, 4, 26, 26, 0, 0, 5, 20, 6, 25, 5};
+		System.out.println("Ex 6: \t" + my_Lab_4.largestGap(nums_arr_5));
+		System.out.println("Ex 7: \t" + my_Lab_4.funFun(7977));
+		System.out.println("Ex 8: \t" + my_Lab_4.commonLastVowel("Watch the characters dance"));
+		System.out.println("Ex 9: \t" + my_Lab_4.memeSum(122, 81));
+		System.out.println("Ex 10: \t" + my_Lab_4.unrepeated("call 911"));
 	}
 
 	private static int test(int a, int b){
