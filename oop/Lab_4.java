@@ -1,5 +1,7 @@
 package oop;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -136,25 +138,56 @@ public class Lab_4{
 
 	// Ex 8
 	public static char commonLastVowel(String line){
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
-		map.put('a', 0);
-		map.put('e', 0);
-		map.put('y', 0);
-		map.put('u', 0);
-		map.put('i', 0);
-		map.put('o', 0);
+		// 3
+		List<Integer> l_arr = Arrays.asList((int)'a', (int)'e', (int)'y', (int)'u', (int)'i', (int)'o');
+		List<Integer> v_arr = Arrays.asList(0, 0, 0, 0, 0, 0);
+		int c_l;
 
 		for (int i = 0; i < line.length(); i++){
-			char k = line.toLowerCase().charAt(i);
-			if (map.containsKey(k)){
-				if (i == line.length() - 1)
-					map.put(k, map.get(k) + 1);
-				else if (line.charAt(i + 1) == ' ')
-					map.put(k, map.get(k) + 1);
+			c_l = (int)line.toLowerCase().charAt(i);
+			if ( l_arr.contains(c_l) && ( (i == line.length() - 1) || (line.charAt(i + 1) == ' ') ) ){
+				v_arr.set(l_arr.indexOf(c_l), l_arr.indexOf(c_l)+1);
 			}
 		}
 
-		return Collections.max(map.entrySet(), (entry1, entry2) -> entry1.getValue() - entry2.getValue()).getKey();
+		return (char)(int)l_arr.get(v_arr.indexOf(Collections.max(v_arr)));
+
+		// 2
+		// int[] l_arr = {(int)'a', (int)'e', (int)'y', (int)'u', (int)'i', (int)'o'};
+		// int[] v_arr = {0, 0, 0, 0, 0, 0};
+		// int c_l = 0, ind = 0;
+
+		// for (int i = 0; i < line.length(); i++){
+		// 	c_l = (int)line.toLowerCase().charAt(i);
+		// 	if ( el_in_arr(l_arr, c_l) && ( (i == line.length() - 1) || (line.charAt(i + 1) == ' ') ) ) {
+		// 		ind = get_ind(l_arr, c_l);
+		// 		v_arr[ind]++;
+		// 	}
+		// }
+
+		// ind = max_ind(v_arr);
+		// return (char)l_arr[ind];
+
+		// 1
+		// Map<Character, Integer> map = new HashMap<Character, Integer>();
+		// map.put('a', 0);
+		// map.put('e', 0);
+		// map.put('y', 0);
+		// map.put('u', 0);
+		// map.put('i', 0);
+		// map.put('o', 0);
+
+		// for (int i = 0; i < line.length(); i++){
+		// 	char k = line.toLowerCase().charAt(i);
+		// 	if (map.containsKey(k)){
+		// 		if (i == line.length() - 1)
+		// 			map.put(k, map.get(k) + 1);
+		// 		else if (line.charAt(i + 1) == ' ')
+		// 			map.put(k, map.get(k) + 1);
+		// 	}
+		// }
+
+		// return Collections.max(map.entrySet(), (entry1, entry2) -> entry1.getValue() - entry2.getValue()).getKey();
 	}
 
 	// Ex 9
@@ -197,5 +230,34 @@ public class Lab_4{
 		}
 
 		return true;
+	}
+
+	public static int max_ind(int[] arr){
+		int ind = 0;
+		int val = arr[0];
+		for (int i = 0; i < arr.length; i++){
+			if (val < arr[i]){
+				ind = i;
+				val = arr[i];
+			}
+		}
+
+		return ind;
+	}
+
+	public static boolean el_in_arr(int[] arr, int el){
+		for (int i:arr){
+			if (i == el)
+				return true;
+		}
+		return false;
+	}
+
+	public static int get_ind(int[] arr, int el){
+		for (int i = 0; i < arr.length; i++){
+			if (arr[i] == el)
+				return i;
+		}
+		return -1;
 	}
 }
