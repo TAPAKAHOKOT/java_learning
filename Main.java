@@ -274,7 +274,7 @@ public class Main{
 		System.out.println("Ex 7: \t" + Lab_5.rearrange("Tesh3 th5e 1I lov2e way6 she7 j4ust i8s."));
 		System.out.println("Ex 8: \t" + Lab_5.maxPossible(8732, 91255));
 		System.out.println("Ex 9: \t" + Lab_5.timeDifference("Los Angeles", "April 1, 2011 23:23", "Canberra"));
-		System.out.println("Ex 10: \t" + Lab_5.isNew(135));
+		System.out.println("Ex 10: \t" + Lab_5.isNew(203));
 
 
 	}

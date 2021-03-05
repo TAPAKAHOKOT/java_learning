@@ -310,7 +310,7 @@ public class Lab_5{
 		for (int i = 0; i < monthes_v.length; i++){
 			mDaysSum += monthes_v[i];
 			monthCounter++;
-			System.out.println(mDaysSum + " - days");
+			// System.out.println(mDaysSum + " - days");
 			if (totalMinutes < mDaysSum * 24 * 60){
 				mDaysSum -= monthes_v[i];
 				break;
@@ -345,8 +345,10 @@ public class Lab_5{
 			int n1 = num / (int)(Math.pow(10, size - i));
 			int n2 = num % (int)Math.pow(10, size - i) / (int)Math.pow(10, size - i - 1);
 
-			if (n1 >= n2)
-				return false;
+			if ( !(n2 == 0 && i == 1) ){
+				if (n1 >= n2)
+					return false;
+			}
 
 			num = num % (int)Math.pow(10, size - i);
 		}

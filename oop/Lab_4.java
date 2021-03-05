@@ -25,20 +25,20 @@ public class Lab_4{
 
 	// Ex 2
 	public boolean cons(int[] arr){
-		boolean res = false;
+		boolean res = true;
 		for (int k = 0; k < arr.length - 1; k++){
 			if (arr[k+1] - arr[k] == 1){
-				return false;
+				res = false;
 			}
 		}
 
 		Arrays.sort(arr);
 		for (int k = 0; k < arr.length - 1; k++){
 			if (arr[k+1] - arr[k] != 1){
-				return false;
+				res = false;
 			}
 		}
-		return true;
+		return res;
 	}
 
 	// Ex 3
