@@ -11,6 +11,7 @@ import oop.Lab_1;
 import oop.Lab_2;
 import oop.Lab_3;
 import oop.Lab_4;
+import oop.Lab_5;
 
 import java.lang.String; 
 import java.util.Scanner;
@@ -260,6 +261,22 @@ public class Main{
 		System.out.println("Ex 8: \t" + my_Lab_4.commonLastVowel("Watch the characters dance"));
 		System.out.println("Ex 9: \t" + my_Lab_4.memeSum(122, 81));
 		System.out.println("Ex 10: \t" + my_Lab_4.unrepeated("call 911"));
+
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 5 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		System.out.println("\n<<< Lab 5 >>>\n");
+
+		System.out.println("Ex 1: \t" + Lab_5.sameLetterPattern("ABAB", "CDCD"));
+		System.out.println("Ex 2: \t" + Lab_5.spiderVsFly("H3", "E2"));
+		System.out.println("Ex 3: \t" + Lab_5.digitsCount(10));
+		System.out.println("Ex 4: \t" + Lab_5.totalPoints(new String[] {"trance", "recant"}, "recant"));
+		System.out.println("Ex 5: \t" + Lab_5.longestRun(new int[] {2, 3, 2, 1, 10, 11, 15}));
+		System.out.println("Ex 6: \t" + Lab_5.takeDownAverage(new String[] {"95%", "83%", "90%", "87%", "88%", "93%"}));
+		System.out.println("Ex 7: \t" + Lab_5.rearrange("Tesh3 th5e 1I lov2e way6 she7 j4ust i8s."));
+		System.out.println("Ex 8: \t" + Lab_5.maxPossible(8732, 91255));
+		System.out.println("Ex 9: \t" + Lab_5.timeDifference("Los Angeles", "April 1, 2011 23:23", "Canberra"));
+		System.out.println("Ex 10: \t" + Lab_5.isNew(135));
+
+
 	}
 
 	private static int test(int a, int b){

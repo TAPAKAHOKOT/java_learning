@@ -232,32 +232,32 @@ public class Lab_4{
 		return true;
 	}
 
-	public static int max_ind(int[] arr){
-		int ind = 0;
-		int val = arr[0];
-		for (int i = 0; i < arr.length; i++){
-			if (val < arr[i]){
-				ind = i;
-				val = arr[i];
-			}
-		}
+	// public static int max_ind(int[] arr){
+	// 	int ind = 0;
+	// 	int val = arr[0];
+	// 	for (int i = 0; i < arr.length; i++){
+	// 		if (val < arr[i]){
+	// 			ind = i;
+	// 			val = arr[i];
+	// 		}
+	// 	}
 
-		return ind;
-	}
+	// 	return ind;
+	// }
 
-	public static boolean el_in_arr(int[] arr, int el){
-		for (int i:arr){
-			if (i == el)
-				return true;
-		}
-		return false;
-	}
+	// public static boolean el_in_arr(int[] arr, int el){
+	// 	for (int i:arr){
+	// 		if (i == el)
+	// 			return true;
+	// 	}
+	// 	return false;
+	// }
 
-	public static int get_ind(int[] arr, int el){
-		for (int i = 0; i < arr.length; i++){
-			if (arr[i] == el)
-				return i;
-		}
-		return -1;
-	}
+	// public static int get_ind(int[] arr, int el){
+	// 	for (int i = 0; i < arr.length; i++){
+	// 		if (arr[i] == el)
+	// 			return i;
+	// 	}
+	// 	return -1;
+	// }
 }
