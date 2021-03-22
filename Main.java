@@ -12,6 +12,7 @@ import oop.Lab_2;
 import oop.Lab_3;
 import oop.Lab_4;
 import oop.Lab_5;
+import oop.Lab_6;
 
 import java.lang.String; 
 import java.util.Scanner;
@@ -276,7 +277,11 @@ public class Main{
 		System.out.println("Ex 9: \t" + Lab_5.timeDifference("Los Angeles", "April 1, 2011 23:23", "Canberra"));
 		System.out.println("Ex 10: \t" + Lab_5.isNew(203));
 
-
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Lab 6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		System.out.println("\n<<< Lab 6 >>>\n");
+		System.out.println("Ex 1: \t" + Lab_6.hiddenAnagram("D  e b90it->?$ (c)a r...d,,#~", "bad credit"));
+		System.out.println("Ex 2: \t" + Arrays.toString(Lab_6.collect("intercontinentalisationalism", 6)));
+		System.out.println("Ex 3: \t" + Lab_6.nicoCipher("myworldevolvesinhers", "tesh"));
 	}
 
 	private static int test(int a, int b){
