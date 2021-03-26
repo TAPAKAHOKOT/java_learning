@@ -282,6 +282,12 @@ public class Main{
 		System.out.println("Ex 1: \t" + Lab_6.hiddenAnagram("D  e b90it->?$ (c)a r...d,,#~", "bad credit"));
 		System.out.println("Ex 2: \t" + Arrays.toString(Lab_6.collect("intercontinentalisationalism", 6)));
 		System.out.println("Ex 3: \t" + Lab_6.nicoCipher("myworldevolvesinhers", "tesh"));
+
+
+		// int[] arr_sort = {4, 7, 3, 10, 1, 5, 8, 9, 6, 0, 2};
+		// System.out.println("Array: " + Arrays.toString(arr_sort));
+		// quickSort(arr_sort, 0, arr_sort.length-1);
+		// System.out.println("Sorted array: " + Arrays.toString(arr_sort));
 	}
 
 	private static int test(int a, int b){
@@ -296,6 +302,35 @@ public class Main{
 	}
 	static float summ(int a, float b){
 		return a + b;
+	}
+
+	static void quickSort(int[] arr, int start, int end){
+		int pivot = start;
+		int low = start+1;
+		int hight = end;
+
+		while (start < end){
+			if (arr[low] > arr[pivot] && arr[hight] < arr[pivot]){
+				int temp = arr[low];
+				arr[low++] = arr[hight];
+				arr[hight--] = temp;
+			}
+
+			if(arr[low] < arr[pivot])
+				low++;
+			if (arr[hight] > arr[pivot])
+				hight--;
+
+			if (low >= hight){
+				int temp = arr[pivot];
+				arr[pivot] = arr[low-1];
+				arr[low-1] = temp;
+
+				quickSort(arr, start, low-1);
+				quickSort(arr, low, end);
+				break;
+			}
+		}
 	}
 	
 }
