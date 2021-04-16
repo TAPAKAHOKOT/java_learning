@@ -17,6 +17,7 @@ import oop.Lab_6;
 import java.lang.String; 
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 
 public class Main{
@@ -281,13 +282,30 @@ public class Main{
 		System.out.println("\n<<< Lab 6 >>>\n");
 		System.out.println("Ex 1: \t" + Lab_6.hiddenAnagram("D  e b90it->?$ (c)a r...d,,#~", "bad credit"));
 		System.out.println("Ex 2: \t" + Arrays.toString(Lab_6.collect("intercontinentalisationalism", 6)));
-		System.out.println("Ex 3: \t" + Lab_6.nicoCipher("myworldevolvesinhers", "tesh"));
+		System.out.println("Ex 3: \t" + Lab_6.nicoCipher("mubashirhassan", "crazy"));
+		System.out.println("Ex 4: \t" + Arrays.toString(Lab_6.twoProduct(new int[] {1, 2, 3, 9, 4, 5, 15, 3}, 45)));
+		System.out.println("Ex 5: \t" + Arrays.toString(Lab_6.isExact(40320)));
+		System.out.println("Ex 6: \t" + Lab_6.fractions("0.19(2367)"));
+		// System.out.println("Ex 7: \t" + Lab_6.pilString("33314444155555"));
+		System.out.println("Ex 7: \t" + Lab_6.pilString("3331444415"));
+		System.out.println("Ex 8: \t" + Lab_6.generateNonconsecutive(4));
+		System.out.println("Ex 9: \t" + Lab_6.isValid("abbcc"));
+		System.out.println("Ex 10: \t" + Arrays.deepToString((Lab_6.sumsUp(new int[] {1, 6, 5, 4, 8, 2, 3, 7}))));
 
 
-		// int[] arr_sort = {4, 7, 3, 10, 1, 5, 8, 9, 6, 0, 2};
-		// System.out.println("Array: " + Arrays.toString(arr_sort));
-		// quickSort(arr_sort, 0, arr_sort.length-1);
-		// System.out.println("Sorted array: " + Arrays.toString(arr_sort));
+		System.out.println("\n\n\n\n\n");
+		int[] arr_sort = {4, 7, 3, 10, 1, 5, 8, 9, 6, 0, 2};
+		Integer[] arr_sort_2 = {4, 7, 3, 10, 1, 5, 8, 9, 6, 0, 2};
+		System.out.println("Array: " + Arrays.toString(arr_sort));
+
+		LinkedList<Integer> arr_sort_3 = new LinkedList<Integer>(Arrays.asList(arr_sort_2));
+		LinkedList<Integer> result =  lazyQuickSort(arr_sort_3);
+
+		System.out.println("Sorted array: " + result.toString());
+
+		quickSort(arr_sort, 0, arr_sort.length-1);
+		System.out.println("Sorted array: " + Arrays.toString(arr_sort));
+		
 	}
 
 	private static int test(int a, int b){
@@ -302,6 +320,43 @@ public class Main{
 	}
 	static float summ(int a, float b){
 		return a + b;
+	}
+
+	static <T> LinkedList<Integer> lazyQuickSort(LinkedList<Integer> arr){
+		if (arr.size() < 2)
+			return arr;
+		else{
+			int pivot = arr.get(0);
+			LinkedList<Integer> less = new LinkedList<Integer>();
+			LinkedList<Integer> greater = new LinkedList<Integer>();
+
+
+
+			for (int i = 1; i < arr.size(); i++){
+				int el = arr.get(i);
+
+				if (el < pivot)
+					less.add(el);
+				else 
+					greater.add(el);
+			}
+
+
+			less = lazyQuickSort(less);
+			greater = lazyQuickSort(greater);
+
+
+			LinkedList<Integer> res = new LinkedList<Integer>();
+			for (int i = 0; i < less.size(); i++)
+				res.add(less.get(i));
+			res.add(pivot);
+			for (int i = 0; i < greater.size(); i++)
+				res.add(greater.get(i));
+
+			return res;
+
+		}
+
 	}
 
 	static void quickSort(int[] arr, int start, int end){

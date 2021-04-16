@@ -3,6 +3,10 @@ package oop;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import static java.lang.Math.pow;
 
 public class Lab_6{
 	// Lab 6
@@ -87,22 +91,203 @@ public class Lab_6{
 	// Ex 3
 	public static String nicoCipher(String mes, String key){
 		int[] keyArr = new int[key.length()];
-		ArrayList<String> arr = new ArrayList<>(Arrays.asList(key));
-		Collections.sort(arr);
+		String[] arr = key.split("");
+		Arrays.sort(arr);
 
-		System.out.println(arr);
-
-		for (int i = 0; i < keyArr.length; i++){
-			keyArr[i] = arr.indexOf(key.charAt(i));
-			// arr[keyArr[i]] = "0";
+		for (int i = 0; i < arr.length; i++){
+			keyArr[i] = key.indexOf(arr[i]);
 		}
 
-		System.out.println(Arrays.toString(keyArr));
+		String res = "";
+		for (int i = 0; i < mes.length() / keyArr.length + 1; i++){
+			for (int k = 0; k < keyArr.length; k++){
+				if (i * keyArr.length + keyArr[k] < mes.length()){
+					res += mes.charAt(i * keyArr.length + keyArr[k]);
+				}
+				else
+					res += " ";
+			}
+		}
 
-		return "";
+		return res;
+	}
+
+	// Ex 4
+	public static int[] twoProduct(int[] arr, int num){
+		for (int i = 0; i < arr.length; i++){
+			for (int k = i+1; k < arr.length; k++){
+				if (arr[i] * arr[k] == num)
+					return new int[] {arr[i], arr[k]};
+			}
+		}
+
+		return new int[] {};
+	}
+
+	// Ex 5
+	public static int[] isExact(int num){
+		return getFact(num, 1, 1);
+	}
+	private static int[] getFact(int num, int cNum, int counter){
+		if (cNum < num)
+			return getFact(num, cNum*(counter+1), counter+1);
+		else if (cNum == num)
+			return new int[] {cNum, counter};
+		else
+			return new int[] {};
+	}
+
+	// Ex 6
+	public static String fractions(String line){
+		String[] res = line.split("\\(");
+		res[1] = res[1].substring(0, res[1].length() - 1);
+
+		int s = line.split("\\.")[1].length() - res[1].length() - 2; // Размер дробной части
+
+		double n = pow(10, res[1].length());
+		double x = Double.parseDouble(res[0]);
+		double nX = Double.parseDouble(res[0] + res[1]) * n;
+
+		return reduceFraction( (nX - x)*pow(10, s) , (n-1) * pow(10, s));
+	}
+
+	private static String reduceFraction(double num1, double num2){
+		for (int k = 2; k <= num1; k++){
+			if (num1 % k == 0 && num2 % k == 0){
+				num1 /= k;
+				num2 /= k;
+			}
+		}
+		return (int)num1 + "/" + (int)num2;
+	}
+
+	// Ex 7
+	public static String pilString(String line){
+		String res = "";
+		int[] lineLengths = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9};
+
+		int counter = 0;
+		int wordCounter = 0;
+		for (int k = 0; k < line.length(); k++){
+			if (counter > 15)
+				counter = 0;
+
+			if (wordCounter < lineLengths[counter]){
+				res += line.charAt(k);
+				wordCounter++;
+			}
+			else{
+				counter++;
+				wordCounter = 1;
+				res += " " + line.charAt(k);
+			}
+		}
+
+		while (wordCounter++ < lineLengths[counter])
+			res += res.charAt(res.length() - 1);
+
+		return res;
+	}
+
+	// Ex 8
+	public static String generateNonconsecutive(int n){
+		return "0".repeat(n) + " " + getBinCons("0".repeat(n));
+	}
+	private static String getBinCons(String line){
+		int ind;
+		String nLine;
+		String res = "";
+
+		if (line.charAt(line.length() - 1) == '1')
+			return "";
+
+		for (int k = 0; k < line.length()-1; k++){
+			ind = line.length() - k - 1;
+
+			if (line.charAt(ind-1) == '0'){
+				nLine = line.substring(0, ind) + "1" + line.substring(ind+1, line.length());
+				res += nLine + " ";
+			
+				res += getBinCons(nLine);
+			}	
+			else
+				return res;
+		}
+
+		if (line.charAt(0) == '0'){
+				nLine = "1" + line.substring(1, line.length());
+				res += nLine + " ";
+				res += getBinCons(nLine);
+		}
+
+		return res;
+	}
+
+	// Ex 9
+	public static String isValid(String line){
+		Map<Character, Integer> counter = new HashMap<Character, Integer>();
+
+		for (int k = 0; k < line.length(); k++){
+			char sym = line.charAt(k);
+			if (counter.containsKey(sym))
+				counter.put(sym, counter.get(sym)+1);
+			else
+				counter.put(sym, 1);
+		}
+
+		int valSum = 0;
+		int valNum = 0;
+		for (char key : counter.keySet()){
+			int val = counter.get(key);
+			valSum += val;
+			valNum ++;
+		}
+
+		boolean checkDif = true;
+		int srNum = Math.round(valSum / valNum);
+
+		for (char key : counter.keySet()){
+			int val = counter.get(key);
+			if (val != srNum)
+				if (checkDif)
+					checkDif = false;
+				else
+					return "No";
+		}
+
+		return "Yes";
+	}
+
+	// Ex 10
+	public static int[][] sumsUp(int[] nums){
+		ArrayList<int[]> aList = new ArrayList<int[]>();
+		for (int k = 0; k < nums.length; k++){
+			for (int i = k+1; i < nums.length; i++){
+				if (nums[k] + nums[i] == 8){
+					int[] arr;
+					if (nums[k] < nums[i])
+						arr = new int[] {nums[k], nums[i]};
+					else
+						arr = new int[] {nums[i], nums[k]};
+
+					aList.add(arr);
+				}
+			}
+		}
+
+		int[][] res = new int[aList.size()][];
+
+		int c = 0;
+		for (int[] k : aList){
+			res[c] = k;
+			c++;
+		}
+		return res;
 	}
 
 }
+
+
 
 
 
