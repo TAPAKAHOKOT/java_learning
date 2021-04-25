@@ -46,9 +46,9 @@ public class Lab_5{
 
 			double disctance = -1, wDist = 0;
 
-			
 			for (String way : ways){
 				wDist = getDistance(getCoords(way), getCoords(endPoint));
+
 				if (disctance == -1 || wDist < disctance){
 					disctance = wDist;
 					bWay = way;
